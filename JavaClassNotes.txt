@@ -1,0 +1,504 @@
+What is programming ?
+	Set of instructions to be executed by computer/machine which might be based on some conditions and criteria.
+	
+
+Some important Terminologies associated with any programming language :-
+
+1. Identifier :-
+	A program in any programming lang can have multiple components/items in it.(Like Java has class, variable , methods, etc.).
+	Name of any such component of the program is called an identifier.
+	Eg. --> class name (String, Object),
+			method name (main() method , print() method )
+			variable name (int number = 0;  here number is an identifier)
+			or a label name.
+
+Generally as a programmer we decide which identifier should be given to a variable or class or method.
+But there are some rules and conventions to decide a name.
+Lets look at common rules for all types of variables, we will see conventions when we talk about specific type.
+	i. The allowed characters to have in Java identifier are :- 
+		a to z , A to Z and 0 to 9, and two special characters("_" and "$").
+	ii. an identifier should never start with digit.
+	iii. Not a rule but recommendation to have meaningful name.
+	iv. Should not use Java reserved keywords and literals for identifier.
+
+primeNumber  -- any variable or any method
+BankAccount  -- Class or Interface -- 
+
+
+------------------------------------------------------------------------------------------------	
+	
+Java Reserved Words :-
+A. DataTypes - (boolean,byte,short,char,int,long,float, double)
+B. Special return type of method - ( void )
+C. Flow Controls - (if,else,switch,case,default,for,do,while,break,continue,return, goto(not used))
+D. Access/Type Modifiers - (public,private,protected,static,final,abstract,synchronized,native,strictfp(1.2 version), transient, volatile)
+E. Exception handling - (try,catch,finally,throw,throws,assert(1.4 version) )
+F. class/interface related -  ( class,package,import,extends,implements,interface)
+G. Object related - (new,instanceof, super, this)
+H. Literals -   true, false  -- used for boolean data type values, 
+			    null -  default value for object reference.  "   "  ""  -- 
+What are  Literals :- Any constant value which can be assigned to a variable is called literal.
+			for  eg. double salary = 1000000.0 ; ------> here 1000000.0 is literal
+					 boolean flag = true;   ---> here true is literal.
+					 String str = "Johnson" ---> here Johnson is a String Literal. 
+			
+G. For Enumerations - Enum.
+	
+------------------------------------------------------------------------------------------------	
+Data Types -
+Java is a strongly typed language.
+And thus every variable must be declared with a data type.
+
+bit --> 1 or 0 -- smallest memory  - it can hold a single binary digit/value
+byte --> 8 bits combine to form 1 byte
+
+
+Primitive data types available in Java:-
+-128 to 127
+byte  --> size - 1 byte  (8 bits ) ---> -2^7 to  2^7 - 1  -- default value =0 
+short --> size - 2 bytes   --> -2^15 to 2^15-1 , default value =0
+int   --> size - 4 bytes
+long  --> size - 8 bytes
+float --> size - 4 bytes
+double -> size - 8 bytes
+boolean --> it can only have values true or false  default - false
+char  --> size 2 bytes   --- default value is space which numeric 0.
+
+
+examples :-
+
+int x = 100;
+byte b =10;
+
+
+x = b ; possible ---> TypeCasting 
+b = x;   not possible , error :- cannot convert types
+b = (byte) x ----> explicit typeCasting
+
+Literals/Constant values that we assign to variables :-
+
+Numeric Data types :-
+numbers -- byte, short, int, long and also float and double 
+
+-0 1, -100 .......
+
+for long type literals you should use suffix l or L
+int x = 10;
+long x = 10L  or 10l;
+
+for float the literals should have suffix "f" or "F".
+for double no need
+float salary = 100.0f;
+float weight = 270.066465F;
+double height = 5.17;
+
+Boolean Data types :-
+only 2 literal values ---> true or false
+True not valid
+TRUE not valid
+Because Java is case sensitive Language.
+
+char Literals :-
+Character literals should be enclosed in single inverted commas.
+char c = 'c';
+char c = 50;
+a - 97
+A - 67
+it can have any numeric value between 0 to 65535
+every number represents a specific ascii character.
+
+
+String Literals :-
+Any sequence of characters enclosed in double inverted commas in nothing but string literal.
+And it should be stored in Java class called as String 
+
+int x = 10;
+String name = "Ram";
+
+String name = null ;  -- nul is a type of literal which also the default value for any object reference.
+
+Object obj = null;
+Object obj;
+
+; ---->  marks the end of current statement.
+
+int a = 5;
+
+Memory allocation when
+
+
+
+------------------------------------------------------------------------------------------------	
+
+Amruta --->
+	50 --> 
+	int marks1 = 87;
+	int marks2 = 87;
+	.
+	.
+	.
+	.
+	int marks50 = 54;
+
+
+Arrays :-
+An array, is a data structure consisting of a collection 
+of elements, each identified by at least one array index or key.
+
+We can say array elements are stored in contigious memory locations.
+
+Need of Array :-
+	To store multiple values of same type without having to declare multiple variable and easy access is possible with index and array reference.
+
+Disadvantage of array :- 
+	we will discuss when topic of collection starts.
+
+	
+Arrays can single dimension or multidimension:=
+
+1. Single Dimension Array :-
+	
+	Declaration and creation of single dimension array.
+	
+	int[] marks ;
+	
+	//Declaration
+	int[] marks;
+	int marks[];
+	int []marks;
+	
+	//Creation
+	marks = new int[100];
+	or
+	int[] marks = new int[4];
+	
+	or 
+	char[] vowels  =  {'a', 'e', 'i', 'o', 'u'}
+	
+	Accesing the elements of an array.
+	arrayName[index]
+	sysout(vowels[0]);    <--- to access first elements of array index is zero;
+	sysout(vowels[4]);
+	marks[0] = 59;
+	marks[1] = 67;
+	marks[2] = 87;
+	
+2. Two dimension array (think as Matrix) :
+	
+	Array of arrays.
+	int[][] numbers = new int[3][2];
+	
+	int[][] numbersInTwoDim = new int[3][];
+	numbersInTwoDim[0] = new int[4];
+	
+	These are actullay array of array
+	
+	All of the below are valid declartions.
+	long[][] numbers;
+	long[] []numbers;
+	long [][]numbers;
+	long numbers[][];
+	long[] numbers[];
+
+3. Three dimension array 
+	
+	eg. 
+	int[][][] matrix;
+
+
+Length of an array :-
+	there is an implicit variable called " length " associated with every which represents size of the array.
+	a.length ----> size of array
+	int[] a = new int[100];
+	a.length   --> 100 
+	a[101]  ----> Array IndexOutOfBound
+	[I
+	[[I
+	[D
+	String
+------------------------------------------------------------------------------------------------
+
+Operators in Java:-
+
+Assignment Operator(=) :-
+	int a=5;
+	int a, b;
+	a=b=10;
+	String s = new String("MyName");
+	Employee e = new Employee();
+
+Arithmatic Operators(+, -, * , / , % ) :-
+	if you perfrom arithmatic operation on int and int --> int
+	if you perfrom arithmatic operation on int and float --> float
+	if you perfrom arithmatic operation on int and long --> long
+	if you perfrom arithmatic operation on float and long --> long
+	if you perfrom arithmatic operation on byte and int --> int
+	if you perfrom arithmatic operation on byte and byte --> int
+	
+	The result type arithmatic operation has size 
+	max(type of a, type of b, int)
+	
+
+Relational Operators(> , < , >=, <=) :-
+	the result of such operation will be boolean.
+And would be used to take some programming decision.	
+	
+Equality Operators(==, !=) :-
+	For premitive data types it checks the value equality.
+	But for Object type or referencetype variables it checks referenceequality only.
+	Meaning it checks if both the objects are pointing to same object in the memory.
+
+instanceOf Operator :-
+	String s = "Kahjgfd";
+	if(s instanceOf String)
+
+BitWise Operator :-
+& ,| ,  ^ 
+
+10 ---> 1010
+8  ---> 1000
+&  ---> 1000 (8)	
+
+
+BitWise complement Operator:-
+~
+int a = 10;
+~a;
+10-->  0000000,...01010;
+~ -->  1111111,...10101;
+
+
+Boolean complement operator(!) :-
+	it is only applicable to boolean types.
+	and it inverts the value.
+	
+	!true => false
+	!false => true
+	
+	
+	
+Logical Operator :-
+&& || 
+	Again applicable on boolean types.
+	Generally used to compound the conditional decisions
+
+TypeCasting
+	
+	
+Compound Operator(+=,  -=, *=, /=) :-
+
+Ternary or Conditional Operator:-
+	int x=(10>20)?30:40
+	(condition)?true_case_actions:false_case_actions
+
+Increment or Decrement Operator:-
+	pre and post Increment  ++i, i++
+	pre and post Decrement  --i, i--
+	i=5  
+	a = ++i;  ====> a will be 6, and i will also become 6
+or  a = i++;  ====> a will be 5, and i will become 6  
+	
+	
+Operator priority or Precedence :-
+1. Unary operators:  x++ , x-- , ++x , --x , ~ , ! , new , <type>
+2. Arithmetic operators : * , / , % , + , - .
+3. Shift operators : >> , >>> , << .
+4. Comparision operators : <, <=,>,>=, instanceof.
+5. Equality operators: == , !=
+6. Bitwise operators: & , ^ , | .
+7. Short circuit operators: && , || .
+8. Conditional operator: (?:)
+9. Assignment operators: += , -= , *= , /= , %= . . .
+
+
+----------------------------------------------------------------
+Flow Control in Java :-
+
+1. if - else 
+	if(boolean_condition){
+		//actions for true scenario
+		}
+	else{
+		//actions for else(false) case
+	}
+	
+	
+	
+	if(boolean_condition){
+		//actions for true scenario
+		}
+	else if {
+		//actions for else(false) case
+	}else {
+	}
+	
+	
+2. Switch Case :-
+	int variable;
+	switch(variable):
+	case 1 :
+			{
+			
+			}
+	case 2 : 
+			{
+			
+			}
+	.
+	.
+	.
+	default :
+			{
+			}
+
+fallthrough condition.
+
+default case can be placed anywhere inn sequence of cases.
+
+
+Loops/ Iterative Statements :-
+1. while
+2. do..while
+3. for loop
+
+
+
+1. while loop	
+
+	while(boolean condition){
+		//statements........
+		
+		////have something which updates the boolean condition for next iteration
+	}
+	
+	i want to print numbers from 1 to 10;
+	int number = 1;
+	while(number <=10)
+	{	
+		sysout("number");
+		number++;
+	}
+
+Note :- Always make sure the loop is not infinite by having some updatation statement.
+	
+2.do ....  while() :-
+
+	do{
+	}while(boolean_condition)
+	
+	Note :- First iteration is compulsorily executed.
+	
+3. for loop :-
+		
+	for(initial_value; boolean_condition ; updatation_of_var ){
+		///statements to be iterated
+	}
+	
+	eg. :-
+	for(int number=1;number <=10; number++){
+	}
+	sysout(number);
+	
+	
+4. for each loop.
+		///we will study later. during collection.
+		
+* Control Statements:-
+1. break;
+2. continue;
+
+
+for(int number=1;number <=10; number++){ //continue brings control here
+			if(number%5==0) 
+				break;			
+			System.out.println(number);
+}
+///break brings control here
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+Package in Java :-
+
+Packages are used in Java in order to prevent naming conflicts, to control access, to make searching/locating and usage of classes, interfaces, enumerations and annotations easier, etc.
+
+A Package can be defined as a grouping of related types (classes, interfaces, enumerations and annotations ) providing access protection and namespace management.
+
+Programmers can define their own packages to bundle group of classes/interfaces, etc. It is a good practice to group related classes implemented by you so that a programmer can easily determine that the classes, interfaces, enumerations, and annotations are related.
+
+In every Java file first statement is always package statement.
+eg.:  package com.learning;
+
+Some existing packages in Java :- 
+	java.util
+	java.lang
+	
+Importing a class or interface from another package :-
+import java.util.List;
+import java.util.*;
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+>identifier
+>Variable
+>DataTypes
+>Operators
+>Control Statements
+>Loops
+>package statement
+>Methods in Java
+
+
+Methods in Java :-
+		Any block of code with a name which may or may not take input argument 
+and produces output arguement or does the quoted task is called method.
+> To have code reusability
+> To improve readability
+
+			return_type method_name(<input parameters or arguments>){
+						//method body
+						//multiple statements
+				<an optional return statement>
+			}
+		
+		eg. A method which returns sum of two integers
+			public int sum(int n1, int n2){
+				int sum;
+				sum = n1+ n2 ;
+				return sum;
+			}
+		
+		>> 	calling a method :-
+				method_name(parameters_values)
+			eg. sum(10,20);
+	
+	
+Var-arg method in Java :-
+	//var-arg method :
+		public int getSumOfNumbers(int... x) {
+			int sum =0;
+			for(int i=0;i < x.length ; i++) {
+				sum = sum + x[i];
+			}
+			System.out.println("Var-arg method is called");		
+			return sum;
+		}
+		
+		
+	It is using internally array to store variable arguments.
+
+Notes :-
+1. You can have variable type argument with normal argument as well but , variable argument should be the last in list.
+2. In a method , there can be only a single variable argument.
+
+
+
+main Method in Java :-
+	public static void main(String[] args){
+	}
+	
+	NoSuchMethodError : main
+	
