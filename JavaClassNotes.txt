@@ -710,3 +710,12 @@ In Java abstraction is implemented using Interfaces and Abstract classes.
 		
 List down differences between abstract class  and interfaces before Java 8.
 
+Visit :- https://docs.oracle.com/javase/tutorial/java/concepts/index.html  for more details and theory.  -- for OOPS concepts 
+
+for Language basics :-  https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html
+
+for inheritance and others :- https://docs.oracle.com/javase/tutorial/java/IandI/index.html
+
+
+
+
