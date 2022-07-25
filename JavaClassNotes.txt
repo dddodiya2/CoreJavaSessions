@@ -646,3 +646,67 @@ Rules regarding static and non-static :-
 	}
 
 3. static block gets executed at the time of class loading.
+	Any execution we want to be executed before creation of any of the object for the class can be written inside static block.
+	
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+OOPS Principles :-
+1. Encapsulation :- Binding of data and code together inside single entity is called Encapsulation.
+	---> class in Java is an example of encapsulation, it binds data (variables) and code (methods) together.
+	---> real world example we can , think of any object like fan, mobile, laptop are example of Encapsulation.
+		 where multiple other objects(data) are packed in outer body along with some functions of it inside.
+	Main advantage is :- Security, Maintainability.
+	
+	If a class has all its data/variables declared as private such class is called as tightly encapsulated class.
+
+private keyword :-
+		If for any variable we want to limit/restrict the access to only within the class, then it should be declared as private.
+
+Getter & Setters :-
+		Declaring the variable private will not allow accesing/updating the variable from outside the class and if we want to give 
+		such functionality appropriate getter and setter methods should be provided.
+			
+	
+	
+	
+2. Abstraction :-
+	Abstraction is hiding the actual implementation and just exposing the functionality/service without , user being able to see internal implementation details.
+	
+Abstract method :-
+	Any method which does not have body is called as abstract method.
+		eg . public abstract int calculateInterest();
+		
+Abstract Class :-
+	Any class which has ateleast 1 abstract method is called Abstract class.
+	
+	abstract class Account{
+			
+		int roi;
+		int accountType;
+		public abstract int calculateInterest();
+		
+	}
+	
+	Account a = new Account();
+	a.calculateInterest();
+	
+An abstract class cannot be instantiated.
+In Java abstraction is implemented using Interfaces and Abstract classes.
+
+	
+
+3. Inheritance :-
+	Inheriting the properties from parent is called inheritance.
+	//Being able to access or use the parents properties is called inheritance.
+	
+	real world example :- We inherit many properties from our both the parents and grandparents.
+	Java :- In java inheritance is observerd with the help of "extends" and "implements" keywords.
+	
+		Animal (eat, sleep, walk)
+		|
+		|
+		|
+		Dog (eat, sleep, walk)
+		
+List down differences between abstract class  and interfaces before Java 8.
+
