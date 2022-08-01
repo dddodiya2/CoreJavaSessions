@@ -670,7 +670,8 @@ Getter & Setters :-
 	
 	
 2. Abstraction :-
-	Abstraction is hiding the actual implementation and just exposing the functionality/service without , user being able to see internal implementation details.
+	Abstraction is hiding the actual implementation and just exposing the functionality/service without , 
+	user being able to see internal implementation details.
 	
 Abstract method :-
 	Any method which does not have body is called as abstract method.
@@ -687,8 +688,8 @@ Abstract Class :-
 		
 	}
 	
-	Account a = new Account();
-	a.calculateInterest();
+	Account a = new Account(); //not allowed  , compile time error.
+	a.calculateInterest();    // not allowed  , compile time error.
 	
 An abstract class cannot be instantiated.
 In Java abstraction is implemented using Interfaces and Abstract classes.
@@ -710,11 +711,129 @@ In Java abstraction is implemented using Interfaces and Abstract classes.
 		
 List down differences between abstract class  and interfaces before Java 8.
 
+	abstract Class                           |                  Interfaces
+
 Visit :- https://docs.oracle.com/javase/tutorial/java/concepts/index.html  for more details and theory.  -- for OOPS concepts 
 
 for Language basics :-  https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html
 
 for inheritance and others :- https://docs.oracle.com/javase/tutorial/java/IandI/index.html
+
+####### Parent class reference can hold a child class object  #########
+
+class Dog extends Animal{
+}
+
+main{
+	Dog d = new Dog();       ///Valid
+	Animal a = new Dog();   ...//Valid 
+	Dog x = new Animal();    .....//Not valid
+}
+Note here is that though parent class reference can hold child class object but then it will be able to call only the methods which are present in both child and parent class.
+Child class specific method cannot be called.
+
+
+
+
+
+4. Polymorphism :-
+	
+	Same name but multiple forms are possible in Java and this is called as polymorphism.
+	
+	Types/ways of Polymorphism in Java :-
+	
+	1. Compile Time Polymorphism (Method Overloading & Method hiding) (also called static polymorphism)
+	2. Runtime polymorphism.    (Method Overriding)                    (also called dynamic polymorphism)
+	
+	
+A. Method Overloading :-
+
+		Methods having same name but different arguements (no. of arguement of type of arguements) inside the same class is called Method overloading.
+
+2 methods are said to be overloaded iff, it satifies below 3 criteria :-
+1. The methods should belong to same class
+2. The name of methods must be same
+3. Argument list must be different.(No of args , type of args, sequence of args)
+
+Note :- Methods signature is method name followed by its arguements.
+		Return type is not the part of Method Signature.
+		
+		public return_type name_of_method(input arguments){
+		
+		}
+	
+	public double sum(double d1, double d2){
+		return d1+d2;
+	}
+	
+	public double sum(double d1, int d2){
+		return d1+d2;
+	}
+	
+	public double sum(double d1, double d2, double d3){
+		return d1+d2+d3;
+	}
+
+
+Static method can also be overloaded, same way as that of non-static method.
+
+
+
+B. Method Overriding :-
+		When child class provides its own implementation to override the parent class implementation, it is method overlridding.
+		
+methods are said to be overlridden iff, it satifies below 3 criteria :-
+1. The methods should belongs to different class. (Child-parent)
+2. The name of methods must be same and arguements should be same.
+3. Implementation might be different.
+4. While overriding a method in child class we can have the return type same as that of parent class method 
+	or it should be subclass of the return type used in parent class method.
+	(These are called co-variant return types).
+
+
+example :-
+
+	public class Animal{
+		
+		public void movement(){
+				"Animal is moving , dont know how !"
+		}
+	}
+	
+	public class Frog extends Animal {
+		
+		public void movement(){
+				"Frog is moving : jump , jump, jump.........!"
+		}
+		
+	}
+	
+	public class Snake extends Animal{
+		public void movement(){
+				"Snake is moving : crawl , ...."
+		}
+	}
+
+
+What about static methods :-
+When we try to override the static method it is called method hiding.
+And it happens before runtime (at compile time) , hence categorised as compile time polymorphism.
+
+
+
+
+class Node{
+	int data;
+	Node link;
+}
+
+class LinkedList{
+	
+	
+	
+}
+
+
 
 
 
