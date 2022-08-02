@@ -758,6 +758,15 @@ A. Method Overloading :-
 Note :- Methods signature is method name followed by its arguements.
 		Return type is not the part of Method Signature.
 		
+2. There is possibility of up-conversion of arguement.
+
+
+	
+
+
+
+
+		
 		public return_type name_of_method(input arguments){
 		
 		}
@@ -777,6 +786,40 @@ Note :- Methods signature is method name followed by its arguements.
 
 Static method can also be overloaded, same way as that of non-static method.
 
+Examples :- 
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		Demo d = new Demo();
+		byte a = 1;
+		byte b = 2;
+		d.dispSum(a, b);
+	}
+	
+	public void dispSum(int a , int b) {
+			System.out.println("int method : Sum is : " + (a+b) );
+	}
+	
+	public void dispSum(short a , short b) {
+		System.out.println("short method : Sum is : " + (a+b) );
+	}
+	
+	
+	
+/*
+byte---> short--> int --> long --> float --> double
+                  ^
+        Char------|
+*/
+	
+}
+
+
+
+
+
+
 
 
 B. Method Overriding :-
@@ -786,10 +829,16 @@ methods are said to be overlridden iff, it satifies below 3 criteria :-
 1. The methods should belongs to different class. (Child-parent)
 2. The name of methods must be same and arguements should be same.
 3. Implementation might be different.
-4. While overriding a method in child class we can have the return type same as that of parent class method 
+
+
+Notes:- 
+1. While overriding a method in child class we can have the return type same as that of parent class method 
 	or it should be subclass of the return type used in parent class method.
 	(These are called co-variant return types).
-
+2. Similar condition applies in case of exceptions(Checked Exception), Child class method should have either same or narrow exception compared to parent class method's throw clause.
+3. The access specifier can only have narrow or same scope in child class compared to parent class.
+4. Method resolution for overridden methods happen at runtime by JVM based on the actual object present in the memmory.
+	And this resolution of method by compiler is called Dynamic method dispatch.
 
 example :-
 
@@ -802,7 +851,7 @@ example :-
 	
 	public class Frog extends Animal {
 		
-		public void movement(){
+		public void movement() {
 				"Frog is moving : jump , jump, jump.........!"
 		}
 		
@@ -837,4 +886,234 @@ class LinkedList{
 
 
 
+
+
+
+public abstract class List{
+	
+	public abstract void add(int a);
+	
+	public abstract int getAtInx(int index);
+	
+	public abstract void removeFromIdx(int index);
+	
+	public void displayItems(){
+		/////
+	}
+	
+	public void sort(){
+	}
+}
+
+public class LinkedList extends List {
+	
+}
+
+public ArrayList extends List{
+}
+
+
+
+
+
+
+
+super keyword in  constructors :-
+package com.learning;
+
+import java.io.IOException;
+
+public class Parent {
+
+	public Parent() {
+		System.out.println("Parent class constructor");
+	}
+	
+	public void parentMethod() {
+		System.out.println("Parent class method parentMethod executing");
+	}
+
+	public void parentOnlyMethod() {
+		System.out.println("parentOnlyMethod executing");
+	}
+
+	/*
+	 * public static void staticMethodOfP() {
+	 * System.out.println("Parent class static method executing"); }
+	 */
+
+}
+
+
+
+
+
+package com.learning;
+
+import java.io.IOException;
+
+public class Child extends Parent {
+
+	public Child(String s) {
+		super();
+		System.out.println("Child class constructor");
+	}
+	
+	@Override
+	public void parentMethod() {
+		System.out.println("Child class method parentMethod executing");
+	}
+
+	public Number getNumber() {
+		return 1;
+	}
+
+	public Parent getSampleObject() {
+		return new Parent();
+	}
+
+	/*
+	 * public static void staticMethodOfP() {
+	 * System.out.println("Child class static method executing"); }
+	 */
+
+	public void childMethod() {
+		System.out.println("childMethod executing");
+	}
+
+}
+
+//Child.staticMethodOfP()
+
+
+
+
+
+
+package com.learning;
+
+public class GrandChild extends Child{
+
+	public GrandChild() {
+		super("String object");
+		System.out.println("Grandchild constr");
+	}
+	
+	public GrandChild(String s) {
+		super("abc");
+		System.out.println("Grandchild constr");
+	}
+	
+	
+	public Short getNumber() {
+		return 2;
+	}
+	
+	public GrandChild getSampleObject() {
+		return new GrandChild();
+	}
+	
+	//GrandChild is child of Child
+	//Integer is also the child of Number.
+	
+	
+}
+
+///Object
+
+
+/*
+
+byte       Byte
+short      Short
+int        Integer
+float      Float
+long       Long
+doule      Double
+
+
+
+
+*/
+
+
+
+
+
+package com.learning;
+
+public class Main {
+
+	public static void main(String[] a) {
+		GrandChild g  = new GrandChild();
+	}
+	
+	
+	/*
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Parent p = new Parent();
+		p.parentMethod();           //parent
+		p.parentOnlyMethod();       //parent
+		
+		Child c = new Child();
+		c.parentMethod();           //child - overridden
+		c.parentOnlyMethod();       //parent
+		c.childMethod();		    //child
+		
+		Parent p1 = new Child();
+		p1.parentMethod();          //child - override   , 
+		p1.parentOnlyMethod();          // parent
+		//p1.childMethod();           //child 		
+		
+		
+		
+		
+		///
+		GrandChild c2 = new GrandChild();
+		Number x =  c2.getNumber();
+		System.out.println(x);
+	}
+*/
+}
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Singleton Design Pattern :-
+	A singleton class is one, which will have exactly and only one instance of it throughout the program.
+
+Example :- Session objects for a user.
+
+public class Singleton{
+
+		private static Singleton s = null;
+		
+		
+		private Singleton(){
+		}
+		
+		public static getInstanceOfSingleton(){
+			if(s == null){
+				s = new Singleton();
+			}
+			return s;
+		}
+		
+}
+
+
+Singleton s1 = new Singleton();  ---> invalid because private constructor.
+
+
+Singleton s2 = Singleton.getInstanceOfSingleton();
+Singleton s3 = Singleton.getInstanceOfSingleton();
 
