@@ -816,10 +816,8 @@ byte---> short--> int --> long --> float --> double
 }
 
 
-
-
-
-
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
 
 
 B. Method Overriding :-
@@ -1101,7 +1099,7 @@ public class Singleton{
 		private Singleton(){
 		}
 		
-		public static getInstanceOfSingleton(){
+		public static Singleton getInstanceOfSingleton(){
 			if(s == null){
 				s = new Singleton();
 			}
@@ -1116,4 +1114,52 @@ Singleton s1 = new Singleton();  ---> invalid because private constructor.
 
 Singleton s2 = Singleton.getInstanceOfSingleton();
 Singleton s3 = Singleton.getInstanceOfSingleton();
+
+
+Assignment :- Learn about Factory Design pattern and Singleton Design patterns.
+
+
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+Scopes for different access specifier :-
+
+1. public     - Can be accessed from anywhere.
+
+2. default    - Can be accessed only within the same package. 	
+
+3. protected  - Inside the same class and Child class.
+
+4. private    - only in same class.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+###  
+1. IS-A Relationship
+			-- Established by inheritance(extends keyword or implements keyword).
+				-- class Animal , class Dog extends Animal	
+						Dog IS-A Animal.
+			
+			
+2. HAS-A Relationship
+		--class Car{
+				
+				Engine e = new Engine();
+				Seat s = new Seat();
+				
+		}
+		-- 
+
+		
+Assignments :-  What are Composition & Aggregation.
+
+-------------------------------------------------------------------------------------------------------------------------
+Encapsulation, Abstraction, Inheritance, Polymorphism.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
 
